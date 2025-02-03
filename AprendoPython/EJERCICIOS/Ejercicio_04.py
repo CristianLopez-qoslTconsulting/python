@@ -33,15 +33,15 @@ if suma_diagonal1 != numero_Magico:
 print(suma_diagonal1)
 
 
-# suma Diagonal 1
-print("DIAGONAL 1")
-suma_diagonal1 = 0
+# suma Diagonal 2
+print("DIAGONAL 2")
+suma_diagonal2 = 0
 for i in range(n):
-    suma_diagonal1 += cuadrado_magico[i][i]
+    suma_diagonal2 += cuadrado_magico[i][i-1-i]
 
-if suma_diagonal1 != numero_Magico:
+if suma_diagonal2 != numero_Magico:
     es_Magico = False
-print(suma_diagonal1)
+print(suma_diagonal2)
 
 
 # sumaFila
