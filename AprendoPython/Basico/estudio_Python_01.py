@@ -151,30 +151,57 @@ print(f" numero a cadena {booleano}")
 
 #============= operadores logicos =============
 
-# + suma
-# - resta / negacion
-# * multiplicacion
-# ** exponente  2 ** 6 = 64
-# / division 
-# / / Divion entera 
-# % modulo
+# +       suma
+# -       resta
+# *       multiplicacion
+# **      exponente  2 ** 6 = 64
+# /       division 
+# / /     Divion entera 
+# %       modulo
 # and o & (puerta logica and)
-# or o | (purta logica or)
-# not (puerta logica not)
-# > mayor que
-# < menor que
-# >= mayor o igual que
-# <= menor o igual que
+# or o |  (purta logica or)
+# not     (puerta logica not)
+# >       mayor que
+# <       menor que
+# >=      mayor o igual que
+# <=      menor o igual que
+# ==      igual / identico
+# !=      distinto
 
 
 
+# ************  if | else ************
 a = True
 b = True
 if a & b: 
     print("Los dos son Correcto")
     
 a = False
-b = True
+b = False
 
 if a | b: 
     print("Almenos 1 es correcto")
+else:
+    print("Ninguno es correcto")
+    
+# ************  bucle while ************   
+
+contador = 1
+while contador <= 20:
+    print(contador,end=' ')
+    contador+=1
+    
+# ************  for ************    
+# range( valor de i , vultas , incremnto)
+
+for i in range (0,21,2):    
+    print(i)
+    
+
+cadena5 = "hola mundo"
+
+for letra in cadena5:
+    print(letra, end=" ")
+    if letra == "l":
+            print("Existe l")
+            break # salir del blucle
