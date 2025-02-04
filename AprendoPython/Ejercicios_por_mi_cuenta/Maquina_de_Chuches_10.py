@@ -61,7 +61,7 @@ while True:
         print()
 
         coordenada = int(input("Elige una chuche:"))  
-        num1 = int(coordenada//10) 
+        num1 = int(coordenada/10) 
         num2 = int(coordenada%10)
 
         if matriz_almacen[num1][num2] > 0:
@@ -95,7 +95,7 @@ while True:
         else:
             print("contraseña correcta")
             chuche_rellenar = int(input("Dime la chuche que quieres rellenar: "))
-            digito1 = chuche_rellenar//10
+            digito1 = chuche_rellenar/10
             digito2 = chuche_rellenar%10
 
             cantidad_Rellenar = int(input("Dime la cantidad que quieres introducir: "))
