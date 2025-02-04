@@ -12,4 +12,4 @@ for n in range (2,num_entero,1):
         primo = False
         break
 
-print(num_entero,str(primo))
+print(num_entero,primo)

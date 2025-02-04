@@ -37,7 +37,9 @@ matriz_ventas=[
     [0,0,0,0],
     [0,0,0,0]
 ]
+print('''
 
+''')
 # fin de lectura de fichero
 suma_precio = 0
 while True:
