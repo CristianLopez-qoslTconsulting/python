@@ -1,5 +1,11 @@
 package vista;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import excepciones.DniException;
@@ -8,28 +14,38 @@ import modelo.DatosVehiculo;
 import modelo.Vehiculo;
 
 public class Main {
+
     public static void main(String[] args) {
-        Scanner sc1 = new Scanner(System.in);
-        String nombre = "Luis";
-        String apellidos = "Garcia Perez";
-        String dni = "31452329J";
-        String matricula = "1224ABC";
-        String identificador = "";
-        Vehiculo vehiculo = null;
+
         try {
-        vehiculo = new Vehiculo(nombre, apellidos, dni, matricula);
-        System.out.println(vehiculo);
+            File f;
+            BufferedReader br;
+            FileReader fr;
+            f = new File("propietarios.txt");
 
-        DatosVehiculo datoVehivulo1 = new DatosVehiculo(vehiculo);
-        sc1.nextLine();
-            
-        datoVehivulo1.atiende();
-        System.out.println(datoVehivulo1.getTiempoEspera());
-        
+            if (!f.exists()) {
+                System.out.println("Creando fichero");
+                f.createNewFile();
+            }
 
-        } catch (DniException | MatriculaException e) {
-        System.out.println(e.getMessage());
+            fr = new FileReader(f);
+            br = new BufferedReader(fr);
+            ArrayList<Vehiculo>guardarVehiculos = new ArrayList<Vehiculo>();
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                
+                String[] guardarLinea = linea.split(",");
+
+                guardarVehiculos.add(new Vehiculo(guardarLinea[0], guardarLinea[1], guardarLinea[2], guardarLinea[3]));
+
+                
+            }
+            System.out.println(guardarVehiculos);
+
+        } catch (IOException | MatriculaException | DniException e) {
+            System.out.println(e.getMessage());
         }
+
     }
 
 }
